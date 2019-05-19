@@ -311,7 +311,7 @@ def build_scalar(value):
     elif isinstance(value, bool):
         return build_bool_scalar(value)
     elif isinstance(value, int):
-        return build_int_scalar(value)
+        return build_unsigned_int_scalar(value) if value > 0 else build_int_scalar(value)
     elif isinstance(value, float):
         return build_double_scalar(value)
     elif value is None:
